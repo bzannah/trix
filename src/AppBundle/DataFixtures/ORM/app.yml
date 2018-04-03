@@ -1,0 +1,23 @@
+AppBundle\Entity\User:
+    user{1..10}:
+        username: <userName()>
+        email: <email()>
+        password: <password()>
+AppBundle\Entity\Workspace:
+    workspace{1..3}:
+        name: <word()>
+        description: <paragraph()>
+AppBundle\Entity\Project:
+    project{1..7}:
+        title: <word()>
+        description: <text()>
+        dueDate: <dateTimeBetween($startDate = 'now', $endDate = '+9 days')>
+        workspace: "@workspace*"
+AppBundle\Entity\Task:
+    task{1..15}:
+        title: <word()>
+        description: <text()>
+        dueDate: <dateTimeBetween($startDate = 'now', $endDate = '+3 months')>
+        attachment: <boolean($chanceOfGettingTrue = 50)>
+        project: "@project*"
+        user: "@user*"

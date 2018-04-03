@@ -1,0 +1,8 @@
+{% if user %}
+    <h1>User Profile</h1>
+    <strong>Name: </strong>{{user.name}} <br/>
+    <strong>email: </strong>{{user.email}} <br/>
+    <strong>Bio: </strong>{{user.bio}} <br/>
+{% else %}
+    mava is a web app for task management and team collaboration. <br/>
+{% endif %}

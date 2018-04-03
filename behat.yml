@@ -1,0 +1,11 @@
+default:
+  extensions:
+    Behat\Symfony2Extension: ~
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      base_url: http://localhost:8000/app_dev.php
+      browser_name: firefox
+      selenium2:
+        wd_host: http://127.0.0.1:4444/wd/hub
+        capabilities: { "platform": "MAC", "browser": "chrome", "version": "" }
