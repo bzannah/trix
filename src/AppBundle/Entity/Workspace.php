@@ -31,7 +31,7 @@ class Workspace
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=, nullable="true")
+     * @ORM\Column(name="description", type="string", length=1025, nullable=true)
      */
     private $description;
 
