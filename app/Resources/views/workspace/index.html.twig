@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Workspaces list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for workspace in workspaces %}
+            <tr>
+                <td><a href="{{ path('workspace_show', { 'id': workspace.id }) }}">{{ workspace.id }}</a></td>
+                <td>{{ workspace.name }}</td>
+                <td>{{ workspace.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('workspace_show', { 'id': workspace.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('workspace_edit', { 'id': workspace.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('workspace_new') }}">Create a new workspace</a>
+        </li>
+    </ul>
+{% endblock %}
