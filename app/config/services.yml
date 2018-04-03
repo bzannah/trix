@@ -55,8 +55,15 @@ services:
         public: true
 
     admin.user:
-            class: AppBundle\Admin\UserAdmin
-            arguments: [~, AppBundle\Entity\User, ~]
-            tags:
-                - { name: sonata.admin, manager_type: orm, label: User }
-            public: true
+         class: AppBundle\Admin\UserAdmin
+         arguments: [~, AppBundle\Entity\User, ~]
+         tags:
+            - { name: sonata.admin, manager_type: orm, label: User }
+         public: true
+
+    admin.task:
+          class: AppBundle\Admin\TaskAdmin
+          arguments: [~, AppBundle\Entity\Task, ~]
+          tags:
+              - { name: sonata.admin, manager_type: orm, label: Task }
+          public: true

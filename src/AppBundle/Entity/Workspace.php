@@ -90,4 +90,12 @@ class Workspace
     {
         return $this->description;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

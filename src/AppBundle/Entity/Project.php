@@ -159,4 +159,12 @@ class Project
     {
         return $this->workspace;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->title;
+    }
 }
