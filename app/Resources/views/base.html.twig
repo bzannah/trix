@@ -4,10 +4,12 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block head %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    {% block navigation %}{% endblock %}
+    {% block body %}{% endblock %}
+    {% block footer %}{% endblock %}
+    {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,0 +1,10 @@
+{# app/Resources/views/default.html.twig #}
+{% extends "trix_base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/navbar_side.css') }}">
+{% endblock %}
+
+{% block navigation %}
+    {% include "navigations.html.twig" %}
+{% endblock %}

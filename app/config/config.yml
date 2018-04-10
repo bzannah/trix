@@ -91,3 +91,25 @@ sonata_block:
         # Enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts:   [admin]
+
+# app/config/config.yml
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+        less:
+            node: /usr/bin/node
+            node_paths: [/usr/lib/node_modules]
+    assets:
+        trix_css:
+            inputs:
+                - %kernel.root_dir%/Resources/public/css/trix.css
+            filters:
+                - less
+                - cssrewrite
+            output: css/trix.css
+
+mopa_bootstrap:
+    form: ~  # Adds twig form theme  support
+    menu: ~  # enables twig helpers for menu
