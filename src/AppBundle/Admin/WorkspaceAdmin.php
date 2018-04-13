@@ -18,13 +18,13 @@ class WorkspaceAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('name', TextType::class)
-            ->add('description',TextareaType::class);
+            ->add('description', TextareaType::class);
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(
-        DatagridMapper $datagridMapper)
-    {
+        DatagridMapper $datagridMapper
+    ) {
         $datagridMapper
             ->add('name')
             ->add('description');
@@ -32,8 +32,8 @@ class WorkspaceAdmin extends AbstractAdmin
 
     // Fields to be shown on lists
     protected function configureListFields(
-        ListMapper $listMapper)
-    {
+        ListMapper $listMapper
+    ) {
         $listMapper
             ->addIdentifier('name')
             ->add('description');

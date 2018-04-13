@@ -42,5 +42,4 @@ class DefaultController extends Controller
         }
         return $this->render('about/index.html.twig', array('user' => $user));
     }
-
 }

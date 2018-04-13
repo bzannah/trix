@@ -21,3 +21,4 @@ AppBundle\Entity\Task:
         attachment: <boolean($chanceOfGettingTrue = 50)>
         project: "@project*"
         user: "@user*"
+        status: '30%? in progress : completed'

@@ -18,14 +18,14 @@ class UserAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('username', TextType::class)
-            ->add('email',EmailType::class)
+            ->add('email', EmailType::class)
             ->add('password', PasswordType::class);
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(
-        DatagridMapper $datagridMapper)
-    {
+        DatagridMapper $datagridMapper
+    ) {
         $datagridMapper
             ->add('username')
             ->add('email');
@@ -33,8 +33,8 @@ class UserAdmin extends AbstractAdmin
 
     // Fields to be shown on lists
     protected function configureListFields(
-        ListMapper $listMapper)
-    {
+        ListMapper $listMapper
+    ) {
         $listMapper
             ->addIdentifier('username')
             ->add('email');

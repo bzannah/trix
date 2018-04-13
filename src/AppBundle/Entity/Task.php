@@ -69,7 +69,12 @@ class Task
      */
     private $user;
 
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", nullable=false)
+     */
+    private $status;
 
     /**
      * Get id

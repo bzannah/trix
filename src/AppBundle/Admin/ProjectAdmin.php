@@ -15,21 +15,24 @@ class ProjectAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title' , TextType::class)
+            ->add('title', TextType::class)
             ->add('description', TextareaType::class)
             ->add('workspace', 'entity', array('class' => 'AppBundle\Entity\Workspace'), array('edit' => 'list'))
-            ->add('due_date', 'date',
+            ->add(
+                'due_date',
+                'date',
                 array(
                     'input'  => 'datetime',
                     'widget' => 'single_text',
                     'format' => 'yyyy-MM-dd',
-                ));
+                )
+            );
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(
-        DatagridMapper $datagridMapper)
-    {
+        DatagridMapper $datagridMapper
+    ) {
         $datagridMapper
             ->add('title')
             ->add('description');
@@ -37,8 +40,8 @@ class ProjectAdmin extends AbstractAdmin
 
     // Fields to be shown on lists
     protected function configureListFields(
-        ListMapper $listMapper)
-    {
+        ListMapper $listMapper
+    ) {
         $listMapper
             ->addIdentifier('title')
             ->add('description');

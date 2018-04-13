@@ -13,8 +13,13 @@ class TaskType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('description')->add('dueDate')->add('attachment')->add('project')->add('user');
-    }/**
+        $builder->add('title')->add('description')->add('dueDate')->add('attachment')->add('project')->add('user')->add('status', ChoiceType::class, array(
+            'choices' => array(
+                'in progress' => 'in progress',
+                'completed' => 'completed'),
+        ));
+    }
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
@@ -31,6 +36,4 @@ class TaskType extends AbstractType
     {
         return 'appbundle_task';
     }
-
-
 }

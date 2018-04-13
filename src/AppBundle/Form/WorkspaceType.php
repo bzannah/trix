@@ -31,6 +31,4 @@ class WorkspaceType extends AbstractType
     {
         return 'appbundle_workspace';
     }
-
-
 }

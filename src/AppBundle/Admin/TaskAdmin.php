@@ -18,22 +18,25 @@ class TaskAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('title', TextType::class)
-            ->add('description',TextareaType::class)
+            ->add('description', TextareaType::class)
             ->add('attachment', CheckboxType::class)
             ->add('project', 'entity', array('class' => 'AppBundle\Entity\Project'), array('edit' => 'list'))
             ->add('user', 'entity', array('class' => 'AppBundle\Entity\User'), array('edit' => 'list'))
-            ->add('due_date', 'date',
+            ->add(
+                'due_date',
+                'date',
                 array(
                     'input'  => 'datetime',
                     'widget' => 'single_text',
                     'format' => 'yyyy-MM-dd',
-                ));
+                )
+            );
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(
-        DatagridMapper $datagridMapper)
-    {
+        DatagridMapper $datagridMapper
+    ) {
         $datagridMapper
             ->add('user')
             ->add('title')
@@ -43,13 +46,12 @@ class TaskAdmin extends AbstractAdmin
 
     // Fields to be shown on lists
     protected function configureListFields(
-        ListMapper $listMapper)
-    {
+        ListMapper $listMapper
+    ) {
         $listMapper
             ->addIdentifier('user')
             ->add('title')
             ->add('project')
             ->add('dueDate');
     }
-
 }
