@@ -18,7 +18,7 @@ class ProjectRepository extends \Doctrine\ORM\EntityRepository
     {
         $q = $this->createQueryBuilder('p')
             ->where('p.workspace = :workSpaceId')
-            ->setParameter('workSpace_id', $workSpaceId)
+            ->setParameter('workSpaceId', $workSpaceId)
             ->getQuery();
         return $q->getResult();
     }

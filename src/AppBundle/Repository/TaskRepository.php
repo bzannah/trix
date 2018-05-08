@@ -19,7 +19,7 @@ class TaskRepository extends \Doctrine\ORM\EntityRepository
         $q = $this->createQueryBuilder('t')
             ->where('t.project = :projectId')
             ->andWhere('t.status = :completed')
-            ->setParameter('projectID', $projectId)
+            ->setParameter('projectId', $projectId)
             ->setParameter('completed', 'completed')
             ->getQuery();
         return $q->getResult();

@@ -67,3 +67,6 @@ services:
           tags:
               - { name: sonata.admin, manager_type: orm, label: Task }
           public: true
+    trix_util:
+        class: AppBundle\Util\Trix
+        arguments: ['@doctrine.orm.entity_manager']

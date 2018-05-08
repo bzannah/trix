@@ -1,8 +1,12 @@
-{% extends "default.html.twig" %}
+{% extends "trix_base.html.twig" %}
 {% block body %}
-    <div id="page-wrapper">
-        <div class="row">
-            place holder
+    <div class="row">
+        <div class="col-xs-3">
+            <i class="fa fa-th-list fa-5x"></i>
+        </div>
+        <div class="col-xs-9 text-right">
+            <div class="huge">{{ finishedTasks }}</div>
+            <div>Finished Tasks!</div>
         </div>
     </div>
 {% endblock %}
